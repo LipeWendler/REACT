@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Header(){
     return(
         <header className='header-container'>
-            <h2 className='title'>REACT.JS</h2>
+            <h2 className='title'>REACT</h2>
             <div className='pagesLinks'>
                 <Link className='link' to='/'>Home</Link>
                 <Link className='link' to='/sobre'>Sobre</Link>
