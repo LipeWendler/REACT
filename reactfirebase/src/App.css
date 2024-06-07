@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: poppins;
+}
+
+.mainContainer{
+    background-color: #100f0f;
+    width: 100%;
+    height: 100vh;
+    padding-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.mainContainer h1{
+    color: antiquewhite;
+    width: 100%;
+    height: 3rem;
+    margin-left: 1rem;
+}
+
+.formsContainer{
+    margin-top: -12rem;
+    width: 20rem;
+    height: 17rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-left: 1rem;
+}
+
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputTitle{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: antiquewhite;
+}
+
+.inputRegister{
+    width: 15rem;
+    height: 1.5rem;
+    background-color: transparent;
+    border: 2px solid blueviolet;
+    padding: 0.3rem;
+    transition: all 0.6s;
+}
+
+.inputRegister:focus{
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    background-color: #383535;
+    transition: all 0.6s;
+}
+
+::placeholder{
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: antiquewhite;
+}
+
+.btn-register{
+    padding: 0.3rem;
+    border: 3px solid blueviolet;
+    background-color: blueviolet;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: antiquewhite;
+    transition: all 0.4s;
+}
+
+.btn-register:hover{
+    background-color: antiquewhite;
+    color: blueviolet;
+    transition: all 0.4s;
+}
+
+.usersContainer{
+    margin-top: -12rem;
+    width: 20rem;
+    height: 17rem;
+}
+
+.usersContainer ul{
+    list-style: none;
+}
+
+.userCard{
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border: 2px solid blueviolet;
+    padding: 0.3rem;
+    color: antiquewhite;
+    font-size: 0.9rem;
+}
+
+.userInfo{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: antiquewhite;
+}
+
+.userCard li{
+    font-size: 0.9rem;
+}
+
+.btn-delete{
+    padding: 0.1rem;
+    border: 3px solid antiquewhite;
+    background-color: antiquewhite;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: blueviolet;
+    transition: all 0.4s;
+}
+
+.btn-delete:hover{
+    background-color: blueviolet;
+    border: 3px solid blueviolet;
+    color: antiquewhite;
+    transition: all 0.4s;
+}
