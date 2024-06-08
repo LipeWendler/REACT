@@ -21,17 +21,25 @@
     margin-left: 1rem;
 }
 
-.formsContainer{
+.registerContainer{
     margin-top: -12rem;
-    width: 20rem;
-    height: 17rem;
+    width: 19rem;
+    height: 22rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 2rem;
     margin-left: 1rem;
+    border: 3px solid blueviolet;
 }
+
+.registerContainer h1{
+    text-align: center;
+    color: antiquewhite;
+    text-decoration: underline blueviolet 5px;
+}
+
 
 .inputContainer{
     display: flex;
@@ -49,6 +57,7 @@
     height: 1.5rem;
     background-color: transparent;
     border: 2px solid blueviolet;
+    color: rgb(255, 255, 255);
     padding: 0.3rem;
     transition: all 0.6s;
 }
@@ -115,6 +124,7 @@
 }
 
 .btn-delete{
+    margin-top: 0.5rem;
     padding: 0.1rem;
     border: 3px solid antiquewhite;
     background-color: antiquewhite;
@@ -128,5 +138,23 @@
     background-color: blueviolet;
     border: 3px solid blueviolet;
     color: antiquewhite;
+    transition: all 0.4s;
+}
+
+.btn-update{
+    margin-top: 0.5rem;
+    padding: 0.1rem;
+    border: 3px solid blueviolet;
+    background-color: blueviolet;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: antiquewhite;
+    transition: all 0.4s;
+}
+
+.btn-update:hover{
+    background-color: antiquewhite;
+    border: 3px solid antiquewhite;
+    color: blueviolet;
     transition: all 0.4s;
 }

@@ -1,14 +1,15 @@
 /*Importação das Bibliotecas necessárias*/
 import { useState, useEffect } from "react";
 import { initializeApp } from "firebase/app";
-import { getFirestore, getDocs, collection, addDoc, doc, deleteDoc } from "firebase/firestore";
+import { getFirestore, getDocs, collection, addDoc, doc, deleteDoc, updateDoc, where, query } from "firebase/firestore";
 import './App.css';
+
 
 
 /*--------------INÍCIO DO ARQUIVO APP----------------------------------------------------------------------------------------------------*/
 
-/*Definição das constantes para gravar os dados necessários*/
 export const App = () => {
+  /*Definição das constantes para gravar os dados necessários*/
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [users, setUsers] = useState([])
@@ -51,6 +52,7 @@ export const App = () => {
   async function createUser() {
     /*Função "addDoc" própria do Firestore para adicionar dados no DB através da collection (tabela do DB)*/
     const user = await addDoc(userCollectionRef, { name, email });
+    window.location.reload();
   }
 
 
@@ -61,6 +63,7 @@ export const App = () => {
     const userDoc = doc(db, 'users', id);
     /*Função "deleteDoc" própria do Firestore para remover dados do DB*/
     await deleteDoc(userDoc);
+    window.location.reload();
   }
 
 
@@ -69,8 +72,9 @@ export const App = () => {
 
   return (
     <div className="mainContainer">
-      <h1>CADASTRO DE USUÁRIOS + VINCULAÇÃO FIREBASE</h1>
-      <div className="formsContainer">
+      <h1>MANIPULAÇÃO DADOS FIREBASE</h1>
+      <div className="registerContainer" id="registerForms">
+        <h1>CADASTRO</h1>
         <div className="inputContainer">
           <label className="inputTitle">Nome</label>
           <input className="inputRegister" type="text" placeholder="Digite seu nome" value={name} onChange={(e) => setName(e.target.value)} />
@@ -98,6 +102,8 @@ export const App = () => {
           })}
         </ul>
       </div>
+
+
     </div>
   );
 };
