@@ -1,0 +1,32 @@
+* {
+  list-style: none;
+  text-decoration: none;
+}
+
+.nav-container{
+  background-color: rgb(129, 129, 129);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-container{
+  display: flex;
+  width: 70%;
+  background-color: rgb(222, 222, 222);
+  gap: 5%;
+}
+
+.list-item{
+  background-color: aqua;
+  padding: 0.4em;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+

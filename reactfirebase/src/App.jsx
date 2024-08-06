@@ -1,7 +1,7 @@
 /*Importação das Bibliotecas necessárias*/
 import { useState, useEffect } from "react";
 import { initializeApp } from "firebase/app";
-import { getFirestore, getDocs, collection, addDoc, doc, deleteDoc, updateDoc, where, query } from "firebase/firestore";
+import { getFirestore, getDocs, collection, addDoc, doc, deleteDoc } from "firebase/firestore";
 import './App.css';
 
 
