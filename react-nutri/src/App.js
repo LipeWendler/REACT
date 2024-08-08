@@ -15,7 +15,7 @@ export default function App(){
   return(
     <>
       <div className='mainContainer'>
-        <header>
+        <header className='header'>
           <strong className='pageTitle'>React Nutri</strong>
         </header>
 
@@ -29,9 +29,7 @@ export default function App(){
             </article>
           );
         })}
-      </div>
-    
-    
+      </div>   
     </>
   );
   
