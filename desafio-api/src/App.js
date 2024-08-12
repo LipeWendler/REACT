@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import './App.css';
+
 
 export default function App() {
   const [api, setApi] = useState([]);
@@ -13,19 +15,25 @@ export default function App() {
   return (
     <>
       <div>
-        <header>
-
+        <header className="header-Container">
+          <strong className="header-Title">Companias da Bolsa de Volores - <span>EUROPA</span></strong>
+          <nav className="navbar-Container">
+            <button className="navbar-item">Início</button>
+          </nav>
         </header>
 
         {api.map((item) => {
           return (
-            <aside>
-              <strong>{item.symbol}</strong>
-              <p>{item.name}</p>
-              <p>{item.currency}</p>
-              <p>{item.stockExchange}</p>
-              <p>{item.exchangeShortName}</p>
-            </aside>
+            <>
+              <div className="stock-Container">
+                <article className="stock-Card">
+                  <strong className="stock-Symbol">{item.symbol}</strong>
+                  <p className="stock-Name">Nome: {item.name}</p>
+                  <p className="stock-Currency">Moeda: {item.currency}</p>
+                  <p className="stock-Exchange">Bolsa de Valores: {item.stockExchange}</p>
+                </article>
+              </div>
+            </>
           );
         })}
 
