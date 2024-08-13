@@ -13,6 +13,18 @@ code {
 }
 
 
+
+/*Estilização da MAIN*/
+
+.main-Container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
 /*Estilização do HEADER e da NAVBAR*/
 
 .header-Container{
@@ -67,14 +79,18 @@ code {
 
 
 /*Estilização dos CARDS*/
-.stock-Container{
-  margin: 2rem;
-  display: flex;
-  flex-direction: column;
+.stock-Card{
+  background-color: #222222;
+  border-radius: 2rem;
+  width: 20rem;
+  margin: 1rem;
+  padding: 1rem;
 }
 
-.stock-Card{
-  background-color: #d9d4d4;
-  width: 20rem;
-  padding: 1rem;
+.stock-Symbol{
+  color: rgb(229, 229, 27);
+}
+
+.stock-Name{
+  color: mintcream;
 }
