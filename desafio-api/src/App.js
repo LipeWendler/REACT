@@ -6,7 +6,7 @@ export default function App() {
   const [api, setApi] = useState([]);
 
   useEffect(() => {
-    let url = 'https://financialmodelingprep.com/api/v3/symbol/available-euronext?apikey=zGyqH52x41YGhf6M07mqSIU0V6jb5UG9'; //Variável com a URL do site para consumo
+    let url = 'https://financialmodelingprep.com/api/v3/search-name?query=META&limit=10&exchange=NASDAQ&apikey=O0sThOVzIeU7AlYn3pi3w7kSxYxALMfN'; //Variável com a URL do site para consumo
     fetch(url) //Manda a requisição para o site
       .then((r) => r.json()) //Recebe a resposta da requisição no formato JSON
       .then((json) => setApi(json)) //Salvando o JSON na constante criada pelo método set
@@ -16,9 +16,6 @@ export default function App() {
     <>
       <header className="header-Container">
         <strong className="header-Title">Companias da Bolsa de Volores - <span>EUROPA</span></strong>
-        <nav className="navbar-Container">
-          <button className="navbar-item">Início</button>
-        </nav>
       </header>
 
       <div className="main-Container">
@@ -28,9 +25,9 @@ export default function App() {
             <>
               <article className="stock-Card">
                 <strong className="stock-Symbol">{item.symbol}</strong>
-                <p className="stock-Name">Nome: {item.name}</p>
-                <p className="stock-Currency">Moeda: {item.currency}</p>
-                <p className="stock-Exchange">Bolsa de Valores: {item.stockExchange}</p>
+                <p className="stock-Name white"><strong>Nome</strong>: {item.name}</p>
+                <p className="stock-Currency white"><strong>Moeda</strong>: {item.currency}</p>
+                <p className="stock-Exchange white"><strong>Bolsa de Valores</strong>: {item.stockExchange}</p>
               </article>
             </>
           );

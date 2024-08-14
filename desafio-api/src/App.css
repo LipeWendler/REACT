@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+/*Estilização da SCROLL BAR*/
+/*width*/
+::-webkit-scrollbar {
+  width: 12px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*Track*/
+::-webkit-scrollbar-track {
+  background: #222222;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*Handle*/
+::-webkit-scrollbar-thumb {
+  background: rgb(229, 229, 27);
+  border-radius: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+
+/*Estilização da MAIN===========================================*/
+.main-Container{
+  /*Definição e posicionamento do Background*/
+  background-image: url(./images/background-Image.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  /*Formato do display/organização*/
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  /*Formatação margens externas/internas*/
+  padding-top: 5rem;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+/*Estilização do HEADER=======================================*/
+.header-Container{
+  background-color: #222222bb;
+  backdrop-filter: blur(5px);
+  padding: 1rem;
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-Title{
+  font-size: 1.4rem;
+  color: #f5fffa;
+}
+
+.header-Title span{
+  color: rgb(229, 229, 27);
+}
+
+
+
+/*Estilização dos CARDS=======================================*/
+.stock-Card{
+  background-color: #222222bb;
+  backdrop-filter: blur(6px);
+  border-radius: 2rem;
+  width: 22rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.stock-Symbol{
+  color: rgb(229, 229, 27);
+  font-size: 1.2rem;
+}
+
+
+
+/*OUTRAS DEFINIÇÔES PARA AS STRONGS====================================*/
+.white{
+  color: #f5fffa;
+}
+
+.yellow{
+  color: rgb(229, 229, 27);
+}
+
+
+
+/*RESPONSIVIDADE========================================================*/
+@media (min-width:320px) and (max-width: 480px) {
+
+}
+
+@media (max-width: 560px){
+
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+
+}
+
+@media (min-width: 1201px) and (max-width:1500){
+
 }
