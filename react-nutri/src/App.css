@@ -1,17 +1,27 @@
 .mainContainer{
-  background-color: #b3b3b3;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 }
 
+.header{
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #48dcf3;
+}
+
 .pageTitle{
   font-size: 2.3rem;
+  color: #fff;
 }
 
 .cardContainer{
-  background-color: #ffff;
+  background-color: #48dcf368;
   width: 60%;
   display: flex;
   align-items: center;
@@ -20,10 +30,16 @@
 }
 
 .cardTitle{
-  width: 68%;
-  background-color: antiquewhite;
+  background-color: #ffffff;
+  display: flex;
+  width: 70%;
+  border-radius: 2rem;
   font-size: 1.5rem;
-  margin: 1rem;
+  margin: 0.3rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  color: #48dcf3;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .cardImage{
@@ -32,7 +48,8 @@
 
 .cardSubtitle{
   background-color: antiquewhite;
-  width: 68%;
+  width: 70%;
+  padding: 0.3rem;
   margin: 0.5rem;
 }
 
@@ -49,5 +66,5 @@
 }
 
 .cardButton:focus{
-  background-color: #48dcf3;
+
 }
