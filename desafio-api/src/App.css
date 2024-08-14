@@ -1,4 +1,4 @@
-/*Estilização da SCROLL BAR*/
+/*Estilização da SCROLL BAR====================================*/
 /*width*/
 ::-webkit-scrollbar {
   width: 12px;
@@ -20,43 +20,48 @@
 
 /*Estilização da MAIN===========================================*/
 .main-Container{
-  /*Definição e posicionamento do Background*/
+  /*Estilo e Posicionamento do Background*/
   background-image: url(./images/background-Image.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 
-  /*Formato do display/organização*/
+  /*Display e Organização*/
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 
-  /*Formatação margens externas/internas*/
+  /*Margens Internas*/
   padding-top: 5rem;
 }
 
 
 
-/*Estilização do HEADER=======================================*/
+/*Estilização do HEADER=========================================*/
 .header-Container{
+  /*Background e Posicionamento*/
   background-color: #222222bb;
   backdrop-filter: blur(5px);
-  padding: 1rem;
   position: fixed;
   z-index: 1;
-  display: flex;
+
+  /*Tamanho, Margens e Organização*/
   width: 100%;
+  padding: 1rem;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/*Titulo*/
 .header-Title{
   font-size: 1.4rem;
   color: #f5fffa;
 }
 
+/*Span do Titulo*/
 .header-Title span{
   color: rgb(229, 229, 27);
 }
@@ -65,10 +70,13 @@
 
 /*Estilização dos CARDS=======================================*/
 .stock-Card{
+  /*Background*/
   background-color: #222222bb;
   backdrop-filter: blur(6px);
+
+  /*Tamanho e Margens*/
   border-radius: 2rem;
-  width: 22rem;
+  width: 20rem;
   margin: 1rem;
   padding: 1rem;
 }
@@ -92,26 +100,37 @@
 
 
 /*RESPONSIVIDADE========================================================*/
-@media (min-width:320px) and (max-width: 480px) {
-
-}
-
 @media (max-width: 560px){
+  .header-Title{
+    font-size: 1rem;
+  }
+  .stock-Symbol{
+    font-size: 1rem;
+  }
 
+  .stock-Desc{
+    font-size: 0.9rem;
+  }
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
-
+@media (min-width: 481px) and (max-width: 834px) {
+  .header-Title{
+    font-size: 1.2rem;
+  }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-
+@media (min-width: 835px) and (max-width: 1024px) {
+  .stock-Card{
+    width: 22rem;
+  }
+  
+  .stock-Symbol{
+    font-size: 1.1rem;
+  }
 }
 
 @media (min-width: 1025px) and (max-width: 1200px) {
-
-}
-
-@media (min-width: 1201px) and (max-width:1500){
-
+  .stock-Card{
+    width: 17rem;
+  }
 }
