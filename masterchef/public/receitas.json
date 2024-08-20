@@ -1,0 +1,70 @@
+{
+    "receitas": [
+        {
+            "nome": "Bolo de Chocolate",
+            "ingredientes": [
+                "1 xícara de açúcar",
+                "1/2 xícara de manteiga",
+                "2 ovos",
+                "1 xícara de farinha de trigo",
+                "1/2 xícara de cacau em pó",
+                "1 colher de chá de fermento em pó",
+                "1/2 colher de chá de bicarbonato de sódio",
+                "1/2 colher de chá de sal",
+                "1/2 xícara de leite"
+            ],
+            "modo_de_preparo": [
+                "1. Preaqueça o forno a 180°C.",
+                "2. Em uma tigela, bata o açúcar e a manteiga até obter um creme.",
+                "3. Adicione os ovos, um de cada vez, batendo bem após cada adição.",
+                "4. Em outra tigela, misture a farinha, o cacau, o fermento, o bicarbonato e o sal.",
+                "5. Adicione a mistura seca à mistura de açúcar, alternando com o leite.",
+                "6. Despeje a massa em uma forma untada e enfarinhada.",
+                "7. Asse por cerca de 30-35 minutos ou até que um palito saia limpo.",
+                "8. Deixe esfriar antes de desenformar e servir."
+            ]
+        },
+        {
+            "nome": "Salada Caesar",
+            "ingredientes": [
+                "1 alface romana",
+                "1/2 xícara de queijo parmesão ralado",
+                "1/2 xícara de croutons",
+                "1/4 xícara de molho Caesar",
+                "1 dente de alho picado",
+                "1 colher de sopa de suco de limão"
+            ],
+            "modo_de_preparo": [
+                "1. Lave e rasgue as folhas de alface.",
+                "2. Em uma tigela grande, misture a alface com o alho picado.",
+                "3. Adicione o molho Caesar e o suco de limão, misturando bem.",
+                "4. Acrescente os croutons e o queijo parmesão por cima.",
+                "5. Sirva imediatamente."
+            ]
+        },
+        {
+            "nome": "Spaghetti à Bolonhesa",
+            "ingredientes": [
+                "200g de spaghetti",
+                "250g de carne moída",
+                "1 cebola picada",
+                "2 dentes de alho picados",
+                "1 cenoura ralada",
+                "1 lata de tomate pelado",
+                "2 colheres de sopa de extrato de tomate",
+                "1 colher de chá de orégano",
+                "Sal e pimenta a gosto",
+                "Queijo parmesão ralado para servir"
+            ],
+            "modo_de_preparo": [
+                "1. Cozinhe o spaghetti de acordo com as instruções da embalagem.",
+                "2. Em uma panela, refogue a cebola e o alho até que fiquem macios.",
+                "3. Adicione a carne moída e cozinhe até dourar.",
+                "4. Acrescente a cenoura e refogue por mais alguns minutos.",
+                "5. Adicione os tomates pelados, o extrato de tomate, o orégano, o sal e a pimenta.",
+                "6. Cozinhe em fogo baixo por cerca de 20 minutos, mexendo ocasionalmente.",
+                "7. Sirva o molho sobre o spaghetti e polvilhe com queijo parmesão."
+            ]
+        }
+    ]
+}
