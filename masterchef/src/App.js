@@ -8,8 +8,9 @@ export default function App() {
 
   useEffect(() => {
     api
-      .get("/public/db/receitas.json")
-      .then((response) => setRecipe(response.data))
+      .get("http://localhost:3004/0")
+      .then((response) => setRecipe(
+        response))
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
       });

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: '/public/db/receitas.json'
+    baseURL: 'http://localhost:3004/0'
 });
 
 export default api;
