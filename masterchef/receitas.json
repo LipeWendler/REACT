@@ -1,6 +1,7 @@
 {
     "receitas": [
         {
+            "id": "0",
             "nome": "Bolo de Chocolate",
             "ingredientes": [
                 "1 xícara de açúcar",
@@ -28,6 +29,7 @@
             ]
         },
         {
+            "id": "1",
             "nome": "Salada Caesar",
             "ingredientes": [
                 "1 alface romana",
@@ -49,6 +51,7 @@
             ]
         },
         {
+            "id": "2",
             "nome": "Spaghetti à Bolonhesa",
             "ingredientes": [
                 "200g de spaghetti",
@@ -76,6 +79,7 @@
             ]
         },
         {
+            "id": "3",
             "nome": "Panqueca de Banana",
             "ingredientes": [
                 "1 banana madura",
@@ -99,6 +103,7 @@
             ]
         },
         {
+            "id": "4",
             "nome": "Sopa de Legumes",
             "ingredientes": [
                 "2 batatas picadas",

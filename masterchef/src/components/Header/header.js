@@ -6,11 +6,9 @@ export default function Header() {
     return (
         <header className="header-container">
             <strong className="header-title">RECEITAS <span>DA</span> CLEIDE </strong>
-            <nav>
-
-            </nav>
-            <nav>
-
+            <nav className='navbar-container'>
+                <Link className='navbar-item' to="/" >Página Inicial</Link>
+                <Link className='navbar-item' to="/AdicionarReceita" >Compartilhar Receita</Link>
             </nav>
         </header>
     )

@@ -1,5 +1,6 @@
 .header-container {
-    background-color: #001427;
+    background-color: #001427db;
+    backdrop-filter: blur(8px);
 
     height: 4rem;
     width: 100%;
@@ -9,12 +10,9 @@
     align-items: center;
 
     padding: 1rem;
-    margin-top: -6rem;
 }
 
-.logo {
-    width: 5%;
-}
+/*========= TITLE ===============================================================*/
 
 .header-title {
     font-size: 2.3rem;
@@ -24,4 +22,37 @@
 .header-title span {
     font-size: 2rem;
     color: #BF0603;
+}
+
+/*========= NAVBAR ===============================================================*/
+.navbar-container{
+    width: 40%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+
+    left: 35%;
+
+    font-size: 1rem;
+}
+
+.navbar-item{
+    background-color: #BF0603;
+
+    color: #F4D58D;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.3rem 1rem 0.3rem 1rem;
+    border-radius: 0.5rem;
+
+    transition: all 0.4s;
+}
+
+.navbar-item:hover{
+    background-color: #F4D58D;
+    
+    color: #001427;
+
+    transition: all 0.4s;
 }

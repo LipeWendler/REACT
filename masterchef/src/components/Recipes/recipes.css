@@ -1,0 +1,106 @@
+/*=========== SECTIONS ===========================================================================*/
+
+/*----------- Recipes Section -----------------------------------------------------------------------*/
+.recipes-section {
+    background-image: url(../../images/recipes-bg.jpg);
+    background-attachment: fixed;
+    padding-top: 4rem;
+}
+
+
+
+/*=========== CARDS DISPLAY/ORGANIZATION ==========================================================*/
+.main_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/*=========== RECIPES CARDS =======================================================================*/
+.recipe-card {
+    background-color: #708d8178;
+    backdrop-filter: blur(6px);
+
+    width: 80%;
+    height: 30.6rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin: 1rem;
+    border-radius: 2rem;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.9);
+}
+
+/*----------- Card Title --------------------------------------------------------------------------*/
+.title-container {
+    background-color: #ed0400e4;
+    opacity: 0.9;
+
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0.4rem;
+    border-radius: 2rem 2rem 0 0;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.4);
+}
+
+.recipe-title {
+    font-size: 2rem;
+    color: #F4D58D;
+}
+
+/*----------- Card Content Display/Organization ----------------------------------------------------*/
+.recipe-content {
+    display: flex;
+}
+
+
+/*----------- Card Image --------------------------------------------------------------------------*/
+.recipe-image {
+    width: 27.2%;
+
+    border-radius: 0 0 0 2rem;
+}
+
+/*----------- Card Description --------------------------------------------------------------------------*/
+.description-container {
+    width: 67%;
+    margin: 1rem;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.description-title {
+    color: #BF0603;
+    font-size: 1.3rem;
+}
+
+.description-items {
+    font-size: 0.97rem;
+    font-weight: 450;
+    margin: 0.3rem;
+
+    color: #001427;
+}
+
+.description-items strong {
+    color: #BF0603;
+}
+
+
+
+/*
+Dark Red #8D0801
+Light Red #BF0603
+Cream #F4D58D
+Blue Gray #708D81
+Dark Blue #001427
+  */

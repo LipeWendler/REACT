@@ -1,0 +1,42 @@
+.home-section {
+    background-image: url(../../images//home-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 33rem;
+    padding-top: 6rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-title {
+    width: 25%;
+    position: relative;
+    right: 10%;
+    bottom: 10%;
+    rotate: -3deg;
+
+    font-size: 3.5rem;
+    color: #001427;
+    opacity: 0.9;
+}
+
+.span {
+    color: #BF0603;
+}
+
+.home-subtitle {
+    width: 30%;
+    position: relative;
+    right: 6%;
+    bottom: 7%;
+    rotate: -3deg;
+
+    font-size: 1.7rem;
+    color: #001427;
+    opacity: 0.9;
+}
