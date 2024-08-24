@@ -14,14 +14,14 @@
                 "1/2 xícara de leite"
             ],
             "modo_de_preparo": [
-                "1. Preaqueça o forno a 180°C.",
-                "2. Em uma tigela, bata o açúcar e a manteiga até obter um creme.",
-                "3. Adicione os ovos, um de cada vez, batendo bem após cada adição.",
-                "4. Em outra tigela, misture a farinha, o cacau, o fermento, o bicarbonato e o sal.",
-                "5. Adicione a mistura seca à mistura de açúcar, alternando com o leite.",
-                "6. Despeje a massa em uma forma untada e enfarinhada.",
-                "7. Asse por cerca de 30-35 minutos ou até que um palito saia limpo.",
-                "8. Deixe esfriar antes de desenformar e servir."
+                "Preaqueça o forno a 180°C.",
+                "Em uma tigela, bata o açúcar e a manteiga até obter um creme.",
+                "Adicione os ovos, um de cada vez, batendo bem após cada adição.",
+                "Em outra tigela, misture a farinha, o cacau, o fermento, o bicarbonato e o sal.",
+                "Adicione a mistura seca à mistura de açúcar, alternando com o leite.",
+                "Despeje a massa em uma forma untada e enfarinhada.",
+                "Asse por cerca de 30-35 minutos ou até que um palito saia limpo.",
+                "Deixe esfriar antes de desenformar e servir."
             ],
             "image": [
                 "https://plus.unsplash.com/premium_photo-1715015440855-7d95cf92608a?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -38,11 +38,11 @@
                 "1 colher de sopa de suco de limão"
             ],
             "modo_de_preparo": [
-                "1. Lave e rasgue as folhas de alface.",
-                "2. Em uma tigela grande, misture a alface com o alho picado.",
-                "3. Adicione o molho Caesar e o suco de limão, misturando bem.",
-                "4. Acrescente os croutons e o queijo parmesão por cima.",
-                "5. Sirva imediatamente."
+                "Lave e rasgue as folhas de alface.",
+                "Em uma tigela grande, misture a alface com o alho picado.",
+                "Adicione o molho Caesar e o suco de limão, misturando bem.",
+                "Acrescente os croutons e o queijo parmesão por cima.",
+                "Sirva imediatamente."
             ],
             "image": [
                 "https://plus.unsplash.com/premium_photo-1700089483464-4f76cc3d360b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -63,16 +63,63 @@
                 "Queijo parmesão ralado para servir"
             ],
             "modo_de_preparo": [
-                "1. Cozinhe o spaghetti de acordo com as instruções da embalagem.",
-                "2. Em uma panela, refogue a cebola e o alho até que fiquem macios.",
-                "3. Adicione a carne moída e cozinhe até dourar.",
-                "4. Acrescente a cenoura e refogue por mais alguns minutos.",
-                "5. Adicione os tomates pelados, o extrato de tomate, o orégano, o sal e a pimenta.",
-                "6. Cozinhe em fogo baixo por cerca de 20 minutos, mexendo ocasionalmente.",
-                "7. Sirva o molho sobre o spaghetti e polvilhe com queijo parmesão."
+                "Cozinhe o spaghetti de acordo com as instruções da embalagem.",
+                "Em uma panela, refogue a cebola e o alho até que fiquem macios.",
+                "Adicione a carne moída e cozinhe até dourar.",
+                "Acrescente a cenoura e refogue por mais alguns minutos.",
+                "Adicione os tomates pelados, o extrato de tomate, o orégano, o sal e a pimenta.",
+                "Cozinhe em fogo baixo por cerca de 20 minutos, mexendo ocasionalmente.",
+                "Sirva o molho sobre o spaghetti e polvilhe com queijo parmesão."
             ],
             "image": [
                 "https://images.unsplash.com/photo-1653122025256-d1ac2880c511?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            ]
+        },
+        {
+            "nome": "Panqueca de Banana",
+            "ingredientes": [
+                "1 banana madura",
+                "2 ovos",
+                "1/2 xícara de aveia em flocos",
+                "1 colher de chá de fermento em pó",
+                "1/2 colher de chá de canela em pó",
+                "1 pitada de sal"
+            ],
+            "modo_de_preparo": [
+                "Amasse a banana em uma tigela.",
+                "Adicione os ovos e misture bem.",
+                "Acrescente a aveia, o fermento, a canela e o sal, misturando até obter uma massa homogênea.",
+                "Aqueça uma frigideira antiaderente em fogo médio e unte levemente com óleo.",
+                "Despeje porções da massa na frigideira e cozinhe até que bolhas comecem a se formar na superfície.",
+                "Vire as panquecas e cozinhe até dourar do outro lado.",
+                "Sirva com mel ou frutas frescas."
+            ],
+            "image": [
+                "https://images.unsplash.com/photo-1581428283071-62f7f4902d87?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            ]
+        },
+        {
+            "nome": "Sopa de Legumes",
+            "ingredientes": [
+                "2 batatas picadas",
+                "2 cenouras picadas",
+                "1 abobrinha picada",
+                "1 cebola picada",
+                "2 dentes de alho picados",
+                "1 litro de caldo de legumes",
+                "Sal e pimenta a gosto",
+                "Salsinha picada para decorar"
+            ],
+            "modo_de_preparo": [
+                "Em uma panela grande, refogue a cebola e o alho até ficarem macios.",
+                "Adicione as batatas, as cenouras e a abobrinha, refogando por alguns minutos.",
+                "Despeje o caldo de legumes e tempere com sal e pimenta.",
+                "Cozinhe em fogo médio até que os legumes estejam macios.",
+                "Bata a sopa no liquidificador até obter uma consistência cremosa.",
+                "Decore com salsinha picada antes de servir."
+            ],
+            "image": [
+                "https://plus.unsplash.com/premium_photo-1699541755563-1691ecaa7d99?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             ]
         }
     ]
