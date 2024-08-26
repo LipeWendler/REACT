@@ -20,7 +20,7 @@ export default function AddRecipe() {
         const ingredientes = document.getElementById('ingredientes').value.split(','); // Split serve para fracionar o dado no caracter especificado
         const modoDePreparo = document.getElementById('modoDePreparo').valu.split(',');
         const image = document.getElementById('image').value;
-        
+
         // Carrega as receitas já salvas
         const receitas = await loadRecipes();
 
@@ -38,8 +38,9 @@ export default function AddRecipe() {
     }
 
     // Submit ao confirmar adição
-    document.getElementById('add-form').addEventListener('submit', newRecipe); 
-
+    window.onload = function () {
+        document.getElementById('add-form').addEventListener('submit', newRecipe);
+    }
 
 
     return (
