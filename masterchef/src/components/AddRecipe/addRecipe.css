@@ -1,0 +1,39 @@
+.add-container{
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    margin-top: 7rem;
+    color: #F4D58D;
+}
+
+.add-title-container{
+    background-color: rgb(57, 61, 61);
+    width: 60%;
+}
+
+.add-subtitle-container{
+    background-color: rgb(110, 127, 127);
+    width: 60%;
+}
+
+
+.add-form{
+    background-color: rgb(31, 33, 33);
+}
+
+
+
+
+
+
+/*
+Dark Red #8D0801
+Light Red #BF0603
+Cream #F4D58D
+Blue Gray #708D81
+Dark Blue #001427
+  */

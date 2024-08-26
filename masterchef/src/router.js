@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home/home";
-import AddRecipe from "./pages/AddRecipe/addRecipe";
+import ShareRecipe from "./pages/ShareRecipe/shareRecipe";
 
 
 export default function RouteApp() {
@@ -9,9 +9,8 @@ export default function RouteApp() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/AdicionarReceita" element={<AddRecipe />} />
+                <Route path="/AdicionarReceita" element={<ShareRecipe />} />
             </Routes>
-
         </BrowserRouter>
     )
 }

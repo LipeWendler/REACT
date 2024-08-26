@@ -8,7 +8,7 @@ export default function Header() {
             <strong className="header-title">RECEITAS <span>DA</span> CLEIDE </strong>
             <nav className='navbar-container'>
                 <Link className='navbar-item' to="/" >Página Inicial</Link>
-                <Link className='navbar-item' to="/AdicionarReceita" >Compartilhar Receita</Link>
+                <Link className='navbar-item' to="/AdicionarReceita" >Compartilhe sua Receita</Link>
             </nav>
         </header>
     )

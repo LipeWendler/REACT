@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
 import './recipes.css';
 import api from "../../services/api";
 
@@ -13,6 +12,7 @@ function describeItems(array) {
 export default function Recipes() {
     const [recipes, setRecipes] = useState([]);
 
+    // Função assincrona para coletar as info do JSON
     async function loadRecipes() {
         const response = await api.get('http://localhost:3004/receitas')
         setRecipes(response.data)
@@ -37,12 +37,12 @@ export default function Recipes() {
                                         <div className="description-container">
                                             <div className="recipe-igredients">
                                                 <strong className="description-title">Ingredientes:</strong>
-                                                {describeItems(recipe.ingredientes)} {/* Uso da função "describeItems" para mostrar os ingredientes da receita*/}
+                                                {describeItems(recipe.ingredientes)} {/* Uso da função "describeItems" para listar os ingredientes da receita*/}
                                             </div>
 
                                             <div className="recipe-method">
                                                 <strong className="description-title">Modo de Preparo:</strong>
-                                                {describeItems(recipe.modo_de_preparo)} {/* Uso da função "describeItems" para mostrar o modo de preparo da receita*/}
+                                                {describeItems(recipe.modo_de_preparo)} {/* Uso da função "describeItems" para listar o modo de preparo da receita*/}
                                             </div>
                                         </div>
                                     </div>
