@@ -43,6 +43,7 @@ export default function AddRecipe() {
     }
 
 
+
     return (
         <div className="add-container">
             <div className="add-title-container">
@@ -69,6 +70,8 @@ export default function AddRecipe() {
 
                 <label>Imagem (informa a URL): </label>
                 <input type="text" id="image" placeholder="https://urldaimagem.com" />
+
+                <button type="submit">Compartilhar</button>
             </form>
         </div>
     )
