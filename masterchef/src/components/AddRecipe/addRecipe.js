@@ -4,6 +4,11 @@ import './addRecipe.css';
 
 export default function AddRecipe() {
     const [recipes, setRecipes] = useState([]);
+    const [nome, setNome] = useState('');
+    const [ingredientes, setIngredientes] = useState([]);
+    const [modoDePreparo, setModoDePreparo] = useState([]);
+    const [image, setImage] = useState('');
+
 
     // Função assincrona para carregar os dados do arquivo JSON
     async function loadRecipes() {
@@ -11,15 +16,10 @@ export default function AddRecipe() {
         setRecipes(response.data) //Salva os dados na constante recipes
     }
 
+    loadRecipes();
     // Função assincrona para adicionar uma nova receita
     async function newRecipe(event) {
         event.preventDefault();
-
-        // Coletando dados da nova receita pelo formulário
-        const nome = document.getElementById('nome').value;
-        const ingredientes = document.getElementById('ingredientes').value.split(','); // Split serve para fracionar o dado no caracter especificado
-        const modoDePreparo = document.getElementById('modoDePreparo').valu.split(',');
-        const image = document.getElementById('image').value;
 
         // Carrega as receitas já salvas
         const receitas = await loadRecipes();
@@ -39,9 +39,9 @@ export default function AddRecipe() {
 
     // Submit ao confirmar adição
     window.onload = function () {
-        document.getElementById('add-form').addEventListener('submit', newRecipe);
+        document.getElementById('add-form')?.addEventListener('submit', newRecipe);
     }
-
+    
 
 
     return (
@@ -57,19 +57,19 @@ export default function AddRecipe() {
             <form className="add-form">
                 <div className="input-container">
                     <label className="input-title">Nome da Receita: </label>
-                    <input className="input" type="text" id="nome" placeholder="Bolo de Chocolate" />
+                    <input className="input" type="text" id="nome" placeholder="Bolo de Chocolate" value={nome} onChange={ (e) => setNome(e.target.value)}/>
                 </div>
                 <div className="input-container">
                     <label className="input-title">Ingredientes (separados por vírgula): </label>
-                    <input className="input" type="text" id="ingredientes" placeholder="2 ovos, 1kg de farinha, etc..." />
+                    <input className="input" type="text" id="ingredientes" placeholder="2 ovos, 1kg de farinha, etc..." value={ingredientes} onChange={ (e) => setIngredientes(e.target.value.split(','))}/>
                 </div>
                 <div className="input-container">
                     <label className="input-title">Modo de preparo (etapas separadas por vírgula): </label>
-                    <input className="input" type="text" id="modoDePreparo" placeholder="Esquentar o forno a 180°, misturar tudo, etc... " />
+                    <input className="input" type="text" id="modoDePreparo" placeholder="Esquentar o forno a 180°, misturar tudo, etc... " value={modoDePreparo} onChange={ (e) => setModoDePreparo(e.target.value.split(','))}/>
                 </div>
 
                 <label>Imagem (informa a URL): </label>
-                <input type="text" id="image" placeholder="https://urldaimagem.com" />
+                <input type="text" id="image" placeholder="https://urldaimagem.com" value={image} onChange={ (e) => setimage(e.target.value)}/>
 
                 <button type="submit">Compartilhar</button>
             </form>
