@@ -9,7 +9,6 @@ export default function AddRecipe() {
     const [modoDePreparo, setModoDePreparo] = useState([]);
     const [image, setImage] = useState('');
 
-
     // Função assincrona para carregar os dados do arquivo JSON
     async function loadRecipes() {
         const response = await api.get('http://localhost:3004/receitas') //Pega os dados do arquivo JSON
@@ -69,7 +68,7 @@ export default function AddRecipe() {
                 </div>
 
                 <label>Imagem (informa a URL): </label>
-                <input type="text" id="image" placeholder="https://urldaimagem.com" value={image} onChange={ (e) => setimage(e.target.value)}/>
+                <input type="text" id="image" placeholder="https://urldaimagem.com" value={image} onChange={ (e) => setImage(e.target.value)}/>
 
                 <button type="submit">Compartilhar</button>
             </form>

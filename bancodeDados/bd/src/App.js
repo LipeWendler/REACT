@@ -7,9 +7,13 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, on
 export default function App() {
   const [titulo, setTitulo] = useState('');
   const [autor, setAutor] = useState('');
+  
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+
   const [post, setPost] = useState([])
+  const [idPost, setIdPost] = useState('');
+
 
   useEffect(() => {
     //Função assíncrona.
