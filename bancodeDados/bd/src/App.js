@@ -3,20 +3,23 @@ import { db, auth } from './firebaseConnection';
 
 import { doc, setDoc, collection, addDoc, getDoc, getDocs, updateDoc, deleteDoc, onSnapshot } from "firebase/firestore";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
+import { FunctionDeclarationSchemaType } from "firebase/vertexai-preview";
 
 export default function App() {
   const [titulo, setTitulo] = useState('');
   const [autor, setAutor] = useState('');
-  
+  const [post, setPost] = useState([]);
+  const [idPost, setIdPost] = useState('');
+
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
-  const [post, setPost] = useState([])
-  const [idPost, setIdPost] = useState('');
+  const [usuario, setUsuario] = useState(false);
+  const [detalhesUsuario, setDetalhesUsuario] = useState({});
 
 
   useEffect(() => {
-    //Função assíncrona.
+    //Função para Carregar os Posts armazenados no DB.
     async function carregarPosts() {
       //onSnapshot parâmetros = 1º Coleção onde estãos os dados do DB e a 2º o método.
       const dados = onSnapshot(collection(db, 'posts'), (snapshot) => {
@@ -32,12 +35,84 @@ export default function App() {
               autor: doc.data().autor
             }
           );
-        })
+        });
         setPost(listaPost); //Envia os dados da lista para o DB.
       })
     }
     carregarPosts(); //Chama a função e carrega os dados do DB.
   }, [])
+
+
+  // Função para verificar se o usuário logou com sucesso
+  useEffect(() => {
+    async function verificarLogin() {
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          //Tem usuário logado
+          setUsuario(true);
+          setDetalhesUsuario({
+            uid: user.uid,
+            email: user.email
+          });
+        }
+        else {
+          //Não possui usuário logado
+          setUsuario(false);
+          setDetalhesUsuario({});
+        }
+      })
+    }
+    verificarLogin();
+  }, [])
+
+  async function novoUsuario() {
+    await createUserWithEmailAndPassword(auth, email, senha)
+      //Depois que cadastrou usuário faz Alert e zera variáveis:
+      .then(() => {
+        alert('Usuário cadastrado com sucesso!')
+        setEmail('');
+        setSenha('');
+      })
+      //Verificações email e senha
+      .catch((error) => {
+        //Verifica se senha muito fraca
+        if (error.code === 'auth/weak-password') {
+          alert('Senha muito fraca!')
+        }
+        //Verifica se email já esta cadastrado
+        else if (error.code === 'auth/email-already-in-use') {
+          alert('Email já cadastrado!')
+        }
+      })
+  }
+
+  async function logarUsuario() {
+    await signInWithEmailAndPassword(auth, email, senha)
+      //Depois que usuário logado
+      .then((value) => {
+        alert('Usuário logado com sucesso!')
+        setUsuario(true);
+        setDetalhesUsuario({
+          uid: value.user.uid,
+          email: value.user.email
+        });
+
+        //Após login com sucesso, limpa email e senha
+        setEmail('');
+        setSenha('');
+      })
+      //Erro ao logar 
+      .catch(() => {
+        alert('Erro fazer o login!')
+      })
+  }
+
+  async function fazerLogout() {
+    await signOut(auth)
+    setUsuario(false);
+    setDetalhesUsuario({});
+  }
+
 
 
 
@@ -81,7 +156,7 @@ export default function App() {
 
   //U - UPDATE ===============================================================================
   async function editarPost() {
-    const postEditado = doc(db, 'post', idPost);
+    const postEditado = doc(db, 'posts', idPost);
     await updateDoc(postEditado, {
       titulo: titulo, //Titulo do DB recebe Titulo do update
       autor: autor
@@ -99,7 +174,7 @@ export default function App() {
 
   //D - DELETE ===============================================================================
   async function excluirPost(id) {
-    const postExcluido = doc(db, 'post', id)
+    const postExcluido = doc(db, 'posts', id)
     await deleteDoc(postExcluido)
       .then(() => { //THEN é executado quando a função é executada corretamente.
         alert('Post excluido com sucesso!')
@@ -114,6 +189,33 @@ export default function App() {
   return (
     <div>
       <h1>ReactJS + Firebase</h1>
+
+      {/*--------- ÁREA USUÁRIOS ----------------------------------------------------------*/}
+
+      {usuario && (
+        <div>
+          <strong>Seja bem-vindo(a)</strong>
+          <br/>
+          <span>ID: {detalhesUsuario.uid}</span>
+          <br/>
+          <span>Email: {detalhesUsuario.email}</span>
+          <br/>
+          <button onClick={fazerLogout}>Sair</button>
+        </div>
+      )}
+
+      <h2>Usuários</h2>
+      <label>Email:</label>
+      <textarea type="email" placeholder="Digite um email" value={email} onChange={(e) => setEmail(e.target.value)} />
+
+      <label>Senha:</label>
+      <textarea type="password" placeholder="Digite uma senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
+
+      <button onClick={novoUsuario}>Cadastrar</button>
+      <button onClick={logarUsuario}>Login</button>
+
+      <hr/>
+      {/*--------- ÁREA POSTS ----------------------------------------------------------*/}
       <label>ID do Post</label>
       <input placeholder="ID do Post" value={idPost} onChange={(e) => setIdPost(e.target.value)}></input>
 
@@ -132,14 +234,13 @@ export default function App() {
           (value) => {
             <li key={value.id}>
               <strong>ID: {value.id}</strong>
-              <span>Título: {value.titulo}</span>
+              <span>Título: {value.titulo}</span> 
+              <span>Autor: {value.autor}</span>
+              <button onClick={() => excluirPost(value.id)}>Editar</button>
             </li>
           }
         )}
       </ul>
-
-
-
     </div>
   )
 }
