@@ -1,0 +1,98 @@
+/* Container Geral do Formulário --------------------------------------------*/
+.main-container {
+    background-color: #303030;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100vh;
+    gap: 5rem;
+}
+
+/* Formulario -------------------------------------------------------------*/
+.form {
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 20rem;
+    max-width: 90%;
+    height: 23rem;
+    max-height: 90%;
+    padding: 2.5rem;
+}
+
+.title {
+    color: #1c1c1c;
+    font-size: 30px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.label {
+    display: block;
+    color: #333;
+
+    margin-bottom: 0.3rem;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.input {
+    background-color: #f9f9f9; 
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    width: 90%;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+/* Botões Geral --------------------------------------------------------------- */
+.button-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.button {
+    background-color: #f7c600; 
+    color: #333; 
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    width: 45%;
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #333;
+}
+
+/* Botão de Login */
+.login-button {
+    background-color: #333;
+    color: #f7c600;
+}
+
+.login-button:hover {
+    background-color: #f7c600;
+    color: #333;
+}
+
+/* Botão Register */
+.register-button:hover {
+    background-color: #222;
+    color: #f7c600;
+}
