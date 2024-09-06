@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { db, auth } from '../../firebaseConnection';
 
 import { useNavigate } from 'react-router-dom';
+import './homeForm.css';
 
 import { doc, setDoc, collection, addDoc, getDoc, getDocs, updateDoc, deleteDoc, onSnapshot } from 'firebase/firestore'
 import { signOut } from 'firebase/auth';
