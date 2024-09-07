@@ -31,7 +31,9 @@ export default function Card() {
                         {
                             id: doc.id,
                             titulo: doc.data().titulo,
-                            descricao: doc.data().descricao
+                            descricao: doc.data().descricao,
+                            prazo: doc.data().prazo,
+                            status: doc.data().status
                         }
                     );
                 });
@@ -58,9 +60,11 @@ export default function Card() {
                 {atividade.map(
                     (value) => (
                         <li key={value.id}>
-                            <strong>ID: {value.id}</strong>
                             <span>Título: {value.titulo}</span>
-                            <span>Autor: {value.autor}</span>
+                            <span>Status: {value.descricao}</span>
+                            <span>Descricao: {value.descricao}</span>
+                            <span>Prazo: {value.prazo}</span>
+
                             <button onClick={() => excluirAtividade(value.id)}>Excluir</button>
                         </li>
                     )

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import './homeForm.css';
 
 import { doc, setDoc, collection, addDoc, getDoc, getDocs, updateDoc, deleteDoc, onSnapshot } from 'firebase/firestore'
-import { signOut } from 'firebase/auth';
+
 
 export default function HomeForm() {
     const [idAtividade, setIdAtividade] = useState('');
@@ -16,9 +16,6 @@ export default function HomeForm() {
     const [status, setStatus] = useState('');
 
     const [atividade, setAtividade] = useState([]);
-
-    const [usuario, setUsuario] = useState(false);
-    const [detalhesUsuario, setDetalhesUsuario] = useState({});
 
     const navigate = useNavigate();
 
@@ -44,17 +41,13 @@ export default function HomeForm() {
         carregarAtividades();
     }, [])
 
-    async function fazerLogout() {
-        await signOut(auth)
-        setUsuario(false)
-        setDetalhesUsuario({})
-    }
-
     //C - CREATE =====================================================
     async function addAtividade() {
         await addDoc(collection(db, "atividades"), {
             titulo: titulo,
             descricao: descricao,
+            prazo: prazo,
+            status: status
         }).then(() => {
             alert("Atividade adicionada com sucesso!")
             setDescricao('');
@@ -107,29 +100,53 @@ export default function HomeForm() {
 
     return (
         <div className="homeForm-main-container">
-
-
-            {/* ÁREA POSTS ============================================================ */}
-            < h2 > Adicione uma nova atividade!</h2 >
-
+            {/* ÁREA ATIVIDADES ============================================================ */}
             <div className='homeForm-form-container'>
-                <label>Título:</label>
-                <textarea
-                    type="text"
-                    placeholder="Título da Atividade"
-                    value={titulo}
-                    onChange={(e) => setTitulo(e.target.value)} />
+                <div id='inputs-container'>
+                    <div id='title-container'>
+                        <label>Título:</label>
+                        <input
+                            type="text"
+                            placeholder="Título da Atividade"
+                            value={titulo}
+                            onChange={(e) => setTitulo(e.target.value)} />
+                    </div>
 
-                <label>Descrição:</label>
-                <input
-                    type="text"
-                    placeholder="Descricao da atividade"
-                    value={descricao}
-                    onChange={(e) => setDescricao(e.target.value)} />
+                    <div id='prazo-container'>
+                        <label>Prazo:</label>
+                        <input
+                            type="date"
+                            value={prazo}
+                            onChange={(e) => setPrazo(e.target.value)} />
+                    </div>
 
-                <button onClick={addAtividade}>Inserir</button>
-                <button onClick={buscarAtividade}>Buscar</button>
-                <button onClick={editarAtividade}>Editar</button>
+                    <div id='status-container'>
+                        <label>Status:</label>
+                        <select
+                            value={status}
+                            onChange={(e) => setStatus(e.target.value)}>
+                                <option value='Pendente'>Pendente</option>
+                                <option value='Em andamento'>Em andamento</option>
+                                <option value='Finalizada'>Finalizada</option>
+                                <option value='Atrasada'>Atrasada</option>
+                        </select>
+                    </div>
+
+                    <div id='description-container'>
+                        <label>Descrição:</label>
+                        <textarea className='description-textarea'
+                            type="text"
+                            placeholder="Descricao da atividade"
+                            value={descricao}
+                            onChange={(e) => setDescricao(e.target.value)} />
+                    </div>
+                </div>
+
+                <div className='homeForm-button-container'>
+                    <button className='insert-button' onClick={addAtividade}>Inserir</button>
+                    <button className='search-button' onClick={buscarAtividade}>Buscar</button>
+                    <button className='edit-button' onClick={editarAtividade}>Editar</button>
+                </div>
             </div>
         </div>
     );

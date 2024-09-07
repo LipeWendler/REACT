@@ -74,13 +74,6 @@ export default function LoginForm() {
             })
     }
 
-    async function fazerLogout() {
-        await signOut(auth)
-        setUsuario(false)
-        setDetalhesUsuario({})
-    }
-
-
     return (
         <div className='main-container'>
             <h1 className='main-title'>GERENCIADOR <hr/> <span>DE TAREFAS</span></h1>

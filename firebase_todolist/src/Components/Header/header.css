@@ -1,0 +1,73 @@
+.header-container {
+    background-color: #333;
+    backdrop-filter: blur(8px);
+
+    height: 4rem;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+
+    padding: 1rem;
+}
+
+/*========= TITLE ===============================================================*/
+
+.header-title {
+    font-size: 2.3rem;
+    color: #fff;
+}
+
+.header-title span {
+    font-size: 2rem;
+    color: #FFC107;
+}
+
+/*========= NAVBAR ===============================================================*/
+.navbar-container{
+    width: 35%;
+    height: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+
+    left: 40%;
+
+    font-size: 1rem;
+}
+
+.user-info-container{
+    color: #f7c600;
+}
+
+.user-email{
+    color: #fff;
+    font-weight: 600;
+}
+
+.navbar-item{
+    background-color: #FFC107;
+
+    width: 20%;
+
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.3rem 1rem 0.3rem 1rem;
+    border-radius: 0.5rem;
+
+    transition: all 0.4s;
+}
+
+.navbar-item:hover{
+    background-color: #333;
+    color: #f7c600;
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.7);
+
+    transition: all 0.4s;
+}
