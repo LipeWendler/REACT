@@ -42,7 +42,7 @@ export default function Card() {
         }
         carregarAtividades();
     }, [])
-
+    
     //D - DELETE =====================================================
     async function excluirAtividade(id) {
         const atividadeDeletada = doc(db, "atividades", id);
@@ -60,12 +60,14 @@ export default function Card() {
                 {atividade.map(
                     (value) => (
                         <li key={value.id}>
-                            <span>Título: {value.titulo}</span>
-                            <span>Status: {value.descricao}</span>
-                            <span>Descricao: {value.descricao}</span>
-                            <span>Prazo: {value.prazo}</span>
+                            <h2 className='atividade-title'> {value.titulo}</h2>
+                            <div className='atividade-info-container'>
+                                <span className='atividade-span'><strong>Status:</strong> {value.status}</span>
+                                <span className='atividade-span'><strong>Descricao:</strong> {value.descricao}</span>
+                                <span className='atividade-span'><strong>Prazo:</strong> {value.prazo}</span>
 
-                            <button onClick={() => excluirAtividade(value.id)}>Excluir</button>
+                                <button className='delete-button' onClick={() => excluirAtividade(value.id)}>Excluir</button>
+                            </div>
                         </li>
                     )
                 )}

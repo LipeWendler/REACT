@@ -52,6 +52,8 @@ export default function HomeForm() {
             alert("Atividade adicionada com sucesso!")
             setDescricao('');
             setTitulo('');
+            setPrazo();
+            setStatus('');
         }).catch((error) => {
             console.log(error);
         })
@@ -68,13 +70,13 @@ export default function HomeForm() {
                     {
                         id: doc.id,
                         titulo: doc.data().titulo,
-                        descricao: doc.data().descricao
+                        descricao: doc.data().descricao,
+                        prazo: doc.data().prazo,
+                        status: doc.data().status
                     }
                 );
             });
-
             setAtividade(lista);
-
 
         }).catch((error) => {
             console.log(error);
@@ -83,16 +85,20 @@ export default function HomeForm() {
 
     //U - UPDATE =====================================================
     async function editarAtividade() {
-        const postEditado = doc(db, "atividades", idAtividade);
+        const atividadeEditado = doc(db, "atividades", idAtividade);
 
-        await updateDoc(postEditado, {
+        await updateDoc(atividadeEditado, {
             titulo: titulo,
-            descricao: descricao
+            descricao: descricao,
+            prazo: prazo,
+            status: status
         }).then(() => {
             alert("Atividade editada com sucesso!");
             setIdAtividade('');
             setTitulo('');
             setDescricao('');
+            setPrazo();
+            setStatus('');
         }).catch((error) => {
             console.log(error);
         })

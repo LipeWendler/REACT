@@ -1,37 +1,44 @@
 .card-main-container {
     background-color: #F5F5F5;
     border-radius: 10px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    margin-top: 5px;
+    padding: 15px;
 }
 
 ul {
     list-style: none;
-    /* Remove os marcadores da lista */
     padding: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 li {
-    background-color: #FFFFFF;
-    border-radius: 5px;
-    padding: 15px;
+    width: 30%;
+    background-color: #333;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    margin: 15px;
     margin-bottom: 10px;
 }
 
-span {
-    display: block;
-    /* Cada span ocupa uma linha */
-    margin-bottom: 5px;
-    color: #333;
-    /* Cinza escuro para o texto principal */
+.atividade-title{
+    color: #f7c600;
 }
 
-button {
-    background-color: #FFC107;
-    /* Amarelo vibrante para o botão */
-    color: #FFFFFF;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
+.atividade-info-container{
+    background-color: #F5F5F5;
+    padding: 15px;
+}
+
+
+.atividade-span {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.delete-button:hover{
+    background-color: #333;
+    color: #f7c600;
 }
