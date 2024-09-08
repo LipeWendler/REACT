@@ -5,8 +5,7 @@ import { db, auth } from '../../firebaseConnection';
 import { useNavigate } from 'react-router-dom';
 import './homeForm.css';
 
-import { doc, setDoc, collection, addDoc, getDoc, getDocs, updateDoc, deleteDoc, onSnapshot } from 'firebase/firestore'
-
+import { doc, setDoc, collection, addDoc, getDoc, getDocs, updateDoc, deleteDoc, onSnapshot, query, where } from 'firebase/firestore'
 
 export default function HomeForm() {
     const [idAtividade, setIdAtividade] = useState('');
@@ -19,7 +18,7 @@ export default function HomeForm() {
 
     const navigate = useNavigate();
 
-    // Função para carregamento das atividades a serem feitas ---------------------------------------------------------
+    // Função para carregamento das atividades ---------------------------------------------------------
     useEffect(() => {
         async function carregarAtividades() {
             const dados = onSnapshot(collection(db, "atividades"), (snapshot) => {
@@ -31,7 +30,9 @@ export default function HomeForm() {
                         {
                             id: doc.id,
                             titulo: doc.data().titulo,
-                            descricao: doc.data().descricao
+                            descricao: doc.data().descricao,
+                            prazo: doc.data().prazo,
+                            status: doc.data().status
                         }
                     );
                 });
@@ -43,28 +44,32 @@ export default function HomeForm() {
 
     //C - CREATE =====================================================
     async function addAtividade() {
+        // Cria nova atividade com base nos dados informados pelo formulário da página Home 
         await addDoc(collection(db, "atividades"), {
             titulo: titulo,
             descricao: descricao,
             prazo: prazo,
             status: status
-        }).then(() => {
+        }).then(() => { // Atividade criada, limpa as variáveis 
             alert("Atividade adicionada com sucesso!")
             setDescricao('');
             setTitulo('');
             setPrazo();
             setStatus('');
-        }).catch((error) => {
+        }).catch((error) => { // Se der errado, printa erro no console
             console.log(error);
         })
     }
 
     //R - READ =======================================================
     async function buscarAtividade() {
+        // Pega a collection em que estão as atividades
         const config = collection(db, "atividades");
+        // Coleta os registros da colection
         await getDocs(config).then((snapshot) => {
             let lista = [];
 
+            // Adiciona os registros dentro de uma lista
             snapshot.forEach((doc) => {
                 lista.push(
                     {
@@ -76,30 +81,45 @@ export default function HomeForm() {
                     }
                 );
             });
+            // Define as atividades para exibição
             setAtividade(lista);
 
-        }).catch((error) => {
+        }).catch((error) => { // Se der errado, printa erro no console
             console.log(error);
         })
     }
 
     //U - UPDATE =====================================================
     async function editarAtividade() {
-        const atividadeEditado = doc(db, "atividades", idAtividade);
+        // Encontrar a atividade pelo título
+        const querySnapshot = await getDocs(query(collection(db, "atividades"), where("titulo", "==", titulo)));
 
-        await updateDoc(atividadeEditado, {
-            titulo: titulo,
+        // Caso não existe atividade com o titulo informado
+        if (querySnapshot.empty) {
+            alert("Atividade não encontrada!");
+            return;
+        }
+
+        // Pega o ID da atividade encontrada com base no título (título precisa ser único)
+        const atividade = querySnapshot.docs[0];
+        const idAtividadeEditada = atividade.id;
+
+        // Encontra os dados da atividade a ser editada
+        const atividadeEditada = doc(db, "atividades", idAtividadeEditada);
+
+        // Atualiza os dados da atividade
+        await updateDoc(atividadeEditada, {
             descricao: descricao,
             prazo: prazo,
             status: status
-        }).then(() => {
+        }).then(() => { // Atividade atualizada, limpa as variáveis
             alert("Atividade editada com sucesso!");
             setIdAtividade('');
             setTitulo('');
             setDescricao('');
             setPrazo();
             setStatus('');
-        }).catch((error) => {
+        }).catch((error) => { // Se der errado, printa erro no console
             console.log(error);
         })
     }
@@ -131,10 +151,10 @@ export default function HomeForm() {
                         <select
                             value={status}
                             onChange={(e) => setStatus(e.target.value)}>
-                                <option value='Pendente'>Pendente</option>
-                                <option value='Em andamento'>Em andamento</option>
-                                <option value='Finalizada'>Finalizada</option>
-                                <option value='Atrasada'>Atrasada</option>
+                            <option value='Pendente'>Pendente</option>
+                            <option value='Em andamento'>Em andamento</option>
+                            <option value='Finalizada'>Finalizada</option>
+                            <option value='Atrasada'>Atrasada</option>
                         </select>
                     </div>
 
