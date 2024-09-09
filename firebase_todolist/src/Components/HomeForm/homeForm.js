@@ -130,25 +130,25 @@ export default function HomeForm() {
             <div className='homeForm-form-container'>
                 <div id='inputs-container'>
                     <div id='title-container'>
-                        <label>Título:</label>
-                        <input
+                        <label className='input-label'>Título:</label>
+                        <input className='placeholder-inputs'
                             type="text"
-                            placeholder="Título da Atividade"
+                            placeholder="Título da Atividade / Use o titulo como identificadar para editar"
                             value={titulo}
                             onChange={(e) => setTitulo(e.target.value)} />
                     </div>
 
                     <div id='prazo-container'>
-                        <label>Prazo:</label>
-                        <input
+                        <label className='input-label'>Prazo:</label>
+                        <input className='placeholder-inputs'
                             type="date"
                             value={prazo}
                             onChange={(e) => setPrazo(e.target.value)} />
                     </div>
 
                     <div id='status-container'>
-                        <label>Status:</label>
-                        <select
+                        <label className='input-label'>Status:</label>
+                        <select className='placeholder-inputs'
                             value={status}
                             onChange={(e) => setStatus(e.target.value)}>
                             <option value='Pendente'>Pendente</option>
@@ -159,8 +159,8 @@ export default function HomeForm() {
                     </div>
 
                     <div id='description-container'>
-                        <label>Descrição:</label>
-                        <textarea className='description-textarea'
+                        <label className='input-label'>Descrição:</label>
+                        <textarea className='description-textarea placeholder-inputs'
                             type="text"
                             placeholder="Descricao da atividade"
                             value={descricao}

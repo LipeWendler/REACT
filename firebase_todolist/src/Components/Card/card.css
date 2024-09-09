@@ -9,36 +9,141 @@ ul {
     list-style: none;
     padding: 0;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    align-items: top;
     flex-wrap: wrap;
 }
 
 li {
     width: 30%;
     background-color: #333;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     margin: 15px;
     margin-bottom: 10px;
 }
 
-.atividade-title{
+.atividade-title {
     color: #f7c600;
 }
 
-.atividade-info-container{
+.atividade-info-container {
     background-color: #F5F5F5;
+    height: 90%;
     padding: 15px;
 }
 
 
 .atividade-span {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     color: #333;
 }
 
-.delete-button:hover{
+.delete-button:hover {
     background-color: #333;
     color: #f7c600;
+}
+
+
+/* RESPONSIVIDADE ===================================================================== */
+
+@media (min-width:320px) and (max-width: 467px) {
+    .card-main-container {
+        padding: 5px;
+    }
+
+    li {
+        width: 95%;
+    }
+    
+    .atividade-title {
+        font-size: 19px;
+    }
+
+    .atividade-info-container {
+        font-size: 18px;
+    }
+
+    .delete-button {
+        width: 35%;
+        margin-top: 1rem;
+        font-size: 17px;
+    }
+}
+
+@media (min-width: 468px) and (max-width: 767px) {
+    .card-main-container {
+        padding: 10px;
+    }
+
+    li {
+        width: 95%;
+    }
+    
+    .atividade-title {
+        font-size: 18px;
+    }
+
+    .atividade-info-container {
+        font-size: 16px;
+    }
+
+    .delete-button {
+        width: 35%;
+        margin-top: 1rem;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 999px) {
+    li {
+        width: 45%;
+    }
+    
+    .atividade-title {
+        font-size: 18px;
+    }
+
+    .atividade-info-container {
+        font-size: 16px;
+    }
+
+    .delete-button {
+        width: 35%;
+        margin-top: 1rem;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+    .atividade-title {
+        font-size: 20px;
+    }
+
+    .atividade-info-container {
+        font-size: 16px;
+    }
+
+    .delete-button {
+        width: 35%;
+        margin-top: 1rem;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 2200px) {
+    .atividade-title {
+        font-size: 32px;
+    }
+
+    .atividade-info-container {
+        font-size: 24px;
+    }
+
+    .delete-button {
+        width: 35%;
+        margin-top: 1rem;
+        font-size: 25px;
+    }
 }

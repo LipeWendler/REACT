@@ -9,12 +9,6 @@ import { doc, setDoc, collection, addDoc, getDoc, getDocs, updateDoc, deleteDoc,
 
 // FUNÇÃO PARA CRIAÇÃO DO COMPONENTE ==================================================================================
 export default function Card() {
-    const [idAtividade, setIdAtividade] = useState('');
-    const [titulo, setTitulo] = useState('');
-    const [descricao, setDescricao] = useState('');
-    const [prazo, setPrazo] = useState();
-    const [status, setStatus] = useState('');
-
     const [atividade, setAtividade] = useState([]);
 
     const navigate = useNavigate();
@@ -74,7 +68,5 @@ export default function Card() {
             </ul>
         </div>
     );
-
-
 }
 
