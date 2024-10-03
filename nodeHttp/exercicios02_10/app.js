@@ -27,7 +27,6 @@ const requestListener = function (req, res) {
         res.end('Numero gerado aleatoriamente (0 - 10): ' + utils.randomNumber(11)); // Escreve a resposta HTTP de volta ao cliente
     }
 
-    // Novo bloco para a saudação personalizada
     else if (req.url.startsWith('/saudacao/')) {
         const nome = req.url.split('/')[2]; // Extrai o nome da URL
         if (nome) {
