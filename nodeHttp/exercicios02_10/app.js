@@ -27,9 +27,16 @@ const requestListener = function (req, res) {
         res.end('Numero gerado aleatoriamente (0 - 10): ' + utils.randomNumber(11)); // Escreve a resposta HTTP de volta ao cliente
     }
 
-    else if (req.url === '/saudacoes') {
-        res.writeHead(200); //Define o código de status HTTP da resposta como 200 (OK)
-        res.end('Numero gerado aleatoriamente (0 - 10): ' + utils.randomNumber(11)); // Escreve a resposta HTTP de volta ao cliente
+    // Novo bloco para a saudação personalizada
+    else if (req.url.startsWith('/saudacao/')) {
+        const nome = req.url.split('/')[2]; // Extrai o nome da URL
+        if (nome) {
+            res.writeHead(200, { 'Content-Type': 'text/plain' });
+            res.end(`Ola, ${nome.charAt(0).toUpperCase() + nome.slice(1)}!`); // Capitaliza o primeiro caractere do nome
+        } else {
+            res.writeHead(400, { 'Content-Type': 'text/plain' });
+            res.end('Por favor, informe um nome na saudação.');
+        }
     }
 
     else { // Para qualquer outro URL, retorna "Página não encontrada"
