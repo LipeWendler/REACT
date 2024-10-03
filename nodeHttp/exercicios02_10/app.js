@@ -28,10 +28,10 @@ const requestListener = function (req, res) {
     }
 
     else if (req.url.startsWith('/saudacao/')) {
-        const nome = req.url.split('/')[2]; // Extrai o nome da URL
+        const nome = req.url.split('/')[2]; // Constante para coletar o nome da URL
         if (nome) {
             res.writeHead(200, { 'Content-Type': 'text/plain' });
-            res.end(`Ola, ${nome.charAt(0).toUpperCase() + nome.slice(1)}!`); // Capitaliza o primeiro caractere do nome
+            res.end(`Ola, ${nome.charAt(0).toUpperCase() + nome.slice(1)}!`); // Retorna saudação deixando a 1° letra do nome em Uppercase
         } else {
             res.writeHead(400, { 'Content-Type': 'text/plain' });
             res.end('Por favor, informe um nome na saudação.');
